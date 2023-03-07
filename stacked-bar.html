@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student's profile</title>
+<body>
+	<div style="height: 50%;width: 50%;">
+        <canvas id="myChart" width="952" height="476" style="display: block; box-sizing: border-box; height: 476px; width: 952px;"></canvas>
+      </div>   
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+	const ctx = document.getElementById('myChart');
+    const labels = ['Extent to which medics included you in the treatment decisions (...', 'How well did our staff work together to care of you', 'Concern shown by the person you called for ambulance service', 'Degree to which the medics listened to you  and/or your family', 'Extent to which you were told what to do until the ambulance arrived'];
+    const data = {
+  labels: labels,
+  datasets: [{
+    label: '5 Highest Scores',
+    data: [93.40, 93.87, 93.69, 94.57, 92.19],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(255, 159, 64, 0.2)',
+      'rgba(255, 205, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+    ],
+    borderColor: [
+      'rgb(255, 99, 132)',
+      'rgb(255, 159, 64)',
+      'rgb(255, 205, 86)',
+      'rgb(75, 192, 192)',
+      'rgb(54, 162, 235)',
+    ],
+    borderWidth: 1
+  }]
+};
+
+const config = {
+  type: 'bar',
+  data: data,
+  options: {
+    indexAxis: 'y',
+  }
+};
+
+new Chart(ctx, config);
+
+  </script>
+
+</html>
+
